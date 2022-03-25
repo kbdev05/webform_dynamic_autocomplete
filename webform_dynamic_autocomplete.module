@@ -14,8 +14,6 @@ function webform_dynamic_autocomplete_webform_options_autocomplete_dynamic_alter
   $query_parameter = $config->get('webform_dynamic_query_parameter');
   $url = $endpoint.'?'.$query_parameter.'='.$query;
 
-  //$external_countries_url = 'https://api-uat.apps1.nsw.gov.au/planning/viewersf/V1/ePlanningApi/address?a='.$query.'';
-//   $external_countries_url = '/nsw_address/address_list';
   $check = json_decode(file_get_contents($url), TRUE);
   if($check!=null && is_array($check)){
     $options = $check;
